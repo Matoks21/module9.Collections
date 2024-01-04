@@ -23,7 +23,7 @@ public class MyArrayLists {
         arrayList.add(14);
         System.out.println(arrayList);
         System.out.println("Element with index=11 , " + arrayList.get(10));
-        arrayList.remove(12);
+        arrayList.remove(2);
         System.out.println(arrayList);
         System.out.println("Element with index=11 ,  " + arrayList.get(11));
         arrayList.size();

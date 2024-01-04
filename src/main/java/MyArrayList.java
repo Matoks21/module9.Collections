@@ -1,7 +1,7 @@
 
 package main.java;
 
-        import java.util.Arrays;
+import java.util.Arrays;
 
 public class MyArrayList<T> {
     private int size;
@@ -11,10 +11,6 @@ public class MyArrayList<T> {
         this.array = array;
     }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(array);
-    }
 
     /* додає елемент в кінець */
     public void add(T value) {
@@ -35,13 +31,15 @@ public class MyArrayList<T> {
 
     /*видаляє елемент із вказаним індексом*/
     public void remove(int index) {
-        try {
+        if (index > size || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Index is not valid");
+        }
+     else {
             int elementInNewArray = size - index - 1;//кількість елементів , яку потрібно копіювати
             System.arraycopy(array, index + 1, array, index, elementInNewArray);   //копіювання елементів
             array[--size] = null;//зменшення розміру масива на один елемент
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            ex.printStackTrace();
         }
+
     }
 
 
@@ -55,30 +53,22 @@ public class MyArrayList<T> {
     повертає розмір колекції
      */
     public int size() {
-        size = 0;
-        for (T arr : array) {
-            if (arr != null) {
-                size++;
-            }
-        }
+
         return size;
     }
     /*
-    повертає елемент за індексом}
+    повертає елемент за індексом
      */
 
     public T get(int index) {
-
-        T element = null;
-        for (int i = 0; i < array.length; i++) {
-            try {
-                if (i == index) {
-                    element = array[i];
-                }
-            } catch (ArrayIndexOutOfBoundsException ex) {
-                ex.printStackTrace();
+            if (index > size || index < 0) {
+                throw new ArrayIndexOutOfBoundsException("Index is not valid");
             }
-        }
-        return element;
+        return array[index];
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(array);
     }
 }

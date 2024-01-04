@@ -3,20 +3,14 @@ package main.java;
 
 
 import java.util.Arrays;
-        import java.util.Objects;
+import java.util.Objects;
 
 public class MyQueue<T> {
 
     private int size;
     private T[] arrayQ = (T[]) new Object[size];
 
-    @Override
-    public String toString() {
-        return "MyQueue{" +
-                "size=" + size +
-                ", arrayQ=" + Arrays.toString(arrayQ) +
-                '}';
-    }
+
 
     //додає елемент в кінець
     public void add(T value) {
@@ -67,4 +61,12 @@ public class MyQueue<T> {
         return size;
     }
 
+
+    @Override
+    public String toString() {
+        return "MyQueue{" +
+                "size=" + size +
+                ", arrayQ=" + Arrays.toString(arrayQ) +
+                '}';
+    }
 }

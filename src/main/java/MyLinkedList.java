@@ -30,10 +30,6 @@ public class MyLinkedList<T> {
         }
     }
 
-    @Override
-    public String toString() {
-        return "MyLinkedList {" + "head = " + head + "}";
-    }
 
     // Повертає розмір зв'язаного списку.
     public int size() {
@@ -107,4 +103,10 @@ public class MyLinkedList<T> {
         head = head.next = null;
         size = 0;
     }
+
+    @Override
+    public String toString() {
+        return "MyLinkedList {" + "head = " + head + "}";
+    }
+
 }

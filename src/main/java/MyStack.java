@@ -21,13 +21,7 @@ public class MyStack<T> {
     }
      */
 
-    @Override
-    public String toString() {
-        return "MyStack{" +
-                "head :" + head +
-                ", size=" + size +
-                '}';
-    }
+
 
     // додає елемент в кінець
     public void push(Object value) {
@@ -85,6 +79,14 @@ public class MyStack<T> {
         size--;
         return element;
 
+    }
+
+    @Override
+    public String toString() {
+        return "MyStack{" +
+                "head :" + head +
+                ", size=" + size +
+                '}';
     }
 
     private static class Node<T> {

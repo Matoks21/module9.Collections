@@ -10,22 +10,7 @@ public class MyHashMap<K, V> {
     private int size;
 
 
-    // Перевизначений метод toString для виведення hashmap у вигляді рядка
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        // Проходження по масиву бакетів
-        for (int i = 0; i < hashTable.length; ++i) {
 
-            // Додавання індексу та вмісту кожного бакета у рядок
-            if (hashTable[i] != null) {
-                sb.append(i).append(")").append(hashTable[i]).append(" ");
-            } else {
-                sb.append(i).append(")").append("null ");
-            }
-        }
-
-        return sb.toString();
-    }
 
     private void resize() {
         float loadTable = (float) size / hashTable.length;
@@ -148,7 +133,22 @@ public class MyHashMap<K, V> {
         return this.size;
     }
 
+    // Перевизначений метод toString для виведення hashmap у вигляді рядка
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        // Проходження по масиву бакетів
+        for (int i = 0; i < hashTable.length; ++i) {
 
+            // Додавання індексу та вмісту кожного бакета у рядок
+            if (hashTable[i] != null) {
+                sb.append(i).append(")").append(hashTable[i]).append(" ");
+            } else {
+                sb.append(i).append(")").append("null ");
+            }
+        }
+
+        return sb.toString();
+    }
     private static class Node<K, V> {
         // Приватні поля для зберігання ключа, значення та посилання на наступний елемент в бакеті
         private final K key;
